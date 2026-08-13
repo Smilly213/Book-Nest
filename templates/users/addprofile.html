@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Создать профель{% endblock %}
+
+{% block content %}
+    <form action method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% for f in form %}
+            <p><label for="{{ f.id_for_label }}">{{ f.label }}: </label>{{ f }}</p>
+            <p>{{ f.error }}</p>
+        {% endfor %}
+        <button type="submit">Добавить профель</button>
+    </form>
+{% endblock %}
