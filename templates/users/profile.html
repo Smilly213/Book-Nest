@@ -4,10 +4,10 @@
 
 {% block content %}
     {% if profile.image %}
-        <img src="{{ profile.image.url }}" alt="{{ profile.full_name }}">
+        <img src="{{ profile.image.url }}">
     {% endif %}
-    {{ profile.full_name }}
-    {{ profile.data }}
-    {{ profile.age }}
-    {{ profile.context }}
+    <p>{{ profile.full_name }}</p>
+    <p>{{ profile.data }}</p>
+    <p>{{ profile.age }}</p>
+    <p>{{ profile.context }}</p>
 {% endblock %}
