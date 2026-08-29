@@ -6,8 +6,7 @@
     {% if profile.image %}
         <img src="{{ profile.image.url }}">
     {% endif %}
-    <p>{{ profile.full_name }}</p>
-    <p>{{ profile.data }}</p>
-    <p>{{ profile.age }}</p>
-    <p>{{ profile.context }}</p>
+    <p><h3>Имя: {{ profile.full_name }}</h3></p>
+    <p><h4>Возраст: {{ profile.age }}</h4></p>
+    <p><h3>Описание: {{ profile.context }}</h3></p>
 {% endblock %}

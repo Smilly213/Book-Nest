@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ book.title }}{% endblock %}
+
+{% block content %}
+    {% if book.image %}
+        <img src="{{ book.image.url }}">
+    {% endif %}
+    <p><h2>Назавание: {{ book.title }}</h2></p>
+    <p><h4>Дата: {{ book.date }}</h4></p>
+    {% for g in book.genre.all %}
+        <h3>Жанры: {{ g.title }}</h3> {% if not forloop.last %}, {% endif %}
+    {% endfor %}
+    <p><h2>Автор: {{ book.author }}</h2></p>
+    <p><h2>О книге: {{ book.context }}</h2></p>
+    <h2><a href="{{ book.file.url }}" target="_blank">Читать книгу</a></h2>
+{% endblock %}
